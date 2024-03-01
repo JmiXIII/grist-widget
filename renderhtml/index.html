@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Render sanitized HTML from a cell</title>
     <script src="https://docs.getgrist.com/grist-plugin-api.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/dompurify@2.2.9/dist/purify.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@2.2.9/dist/purify.min.js"></script>
     <style>
       html, body, textarea {
           width: 100%;
@@ -33,7 +33,7 @@
         if (!content) {
           el.style.display = 'none';
         } else {
-          el.innerHTML = DOMPurify.sanitize(content, {ADD_TAGS, ADD_ATTR});
+          // el.innerHTML = DOMPurify.sanitize(content, {ADD_TAGS, ADD_ATTR});
           // If we are allowing scripts, let them execute, which doesn't
           // normally happen when adding script elements using innerHTML.
           if (ADD_TAGS?.includes("script")) {
